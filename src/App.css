@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calender {
+  width: 4rem !important;
+  height: 4rem !important;
+}
