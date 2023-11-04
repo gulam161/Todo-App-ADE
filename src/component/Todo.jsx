@@ -3,7 +3,6 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
-import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Todo() {
@@ -106,14 +105,6 @@ function Todo() {
           >
             <DeleteIcon /> Remove All
           </button>
-
-          {/* <Button
-            variant="outlined"
-            startIcon={<DeleteIcon />}
-            onClick={removeAll}
-          >
-            Remove All
-          </Button> */}
         </div>
       </figure>
     </div>
