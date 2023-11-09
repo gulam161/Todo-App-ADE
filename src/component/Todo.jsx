@@ -3,7 +3,6 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 function Todo() {
   const [inputData, setInputData] = useState("");
@@ -61,7 +60,7 @@ function Todo() {
     <div className="min-h-screen bg-green-300 text-center flex justify-center items-center">
       <figure className="flex flex-col justify-center gap-y-2.5">
         <CalendarMonthIcon className="calender mx-auto text-red-400" />
-        <figcaption className="text-red-500 font-medium text-2xl drop-shadow-2xl">
+        <figcaption className="text-red-500 font-medium text-2xl drop-shadow-2xl capitalize">
           Add your list here 👇
         </figcaption>
         <div className="flex justify-center bg-white py-1 px-3 mt-2.5 rounded-sm shadow-md">
@@ -70,18 +69,18 @@ function Todo() {
             placeholder="Add Item..."
             value={inputData}
             onChange={(e) => setInputData(e.target.value)}
-            className="outline-none border-none italic "
+            className="outline-none border-none  "
           />
           {isEdit === null ? (
             <AddIcon onClick={addItem} />
           ) : (
-            <BorderColorIcon onClick={addItem} className="cursor-pointer" />
+            <EditIcon onClick={addItem} className="cursor-pointer" />
           )}
         </div>
         <div className="show_item">
           {items.map((item) => (
             <div
-              className="flex justify-between items-center capitalize py-0.5 px-2.5 rounded-sm font-medium bg-purple-600 text-white mt-3 shadow-md"
+              className="flex justify-between items-center capitalize py-0.5 px-2.5 rounded-sm font-medium bg-purple-600 text-white mt-3 shadow-md "
               key={item.id}
             >
               <h3 className="font-medium text-base">{item.name}</h3>
@@ -100,10 +99,11 @@ function Todo() {
         </div>
         <div className="show_item">
           <button
-            className="flex items-center mx-auto mt-5 p-2.5 font-semibold border border-red-500 text-center outline-none rounded cursor-pointer hover:bg-red-500"
+            className=" effect04  flex items-center mx-auto mt-5  text-center rounded tracking-widest text-sm font-semibold leading-9 max-w-[120px] relative uppercase w-full text-black outline-black outline-1 outline no-underline transition-all duration-400 overflow-hidden hover:bg-purple-600 hover:outline-violet-600"
+            data-sm-link-text="Remove All"
             onClick={removeAll}
           >
-            <DeleteIcon /> Remove All
+            <span>CHECK LIST</span>
           </button>
         </div>
       </figure>
