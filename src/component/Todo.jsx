@@ -83,12 +83,28 @@ function Todo() {
               className="flex justify-between items-center capitalize py-0.5 px-2.5 rounded-sm font-medium bg-purple-600 text-white mt-3 shadow-md "
               key={item.id}
             >
-              <h3 className="font-medium text-base">{item.name}</h3>
-              <div className="todo_btn">
-                <EditIcon
-                  onClick={() => editItem(item.id)}
-                  className="mr-2 hover:text-green-500 hover:cursor-pointer"
+              {isEdit === item.id ? (
+                <input
+                  type="text"
+                  value={inputData}
+                  onChange={(e) => setInputData(e.target.value)}
+                  className="outline-none border-none rounded-sm text-black flex-1"
                 />
+              ) : (
+                <h3 className="font-medium text-base">{item.name}</h3>
+              )}
+              <div className="todo_btn">
+                {isEdit === item.id ? (
+                  <EditIcon
+                    onClick={addItem}
+                    className="mr-2 hover:text-green-500 hover:cursor-pointer"
+                  />
+                ) : (
+                  <EditIcon
+                    onClick={() => editItem(item.id)}
+                    className="mr-2 hover:text-green-500 hover:cursor-pointer"
+                  />
+                )}
                 <DeleteForeverIcon
                   onClick={() => deleteItem(item.id)}
                   className="hover:text-red-500 hover:cursor-pointer"
